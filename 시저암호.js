@@ -13,7 +13,7 @@ function solution(s, n) {
             result += capitalLetters[capitalLetters.indexOf(el)+n];
         }
     })
-    console.log(result)
+
     return result;
 }
 
