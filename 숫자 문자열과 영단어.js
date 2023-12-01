@@ -1,46 +1,15 @@
-// function solution(s) {
-//   const strNum = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
-//   const numElementes = s.split("").filter((el) => Number(el));
-//   const strElementes = [];
-
-//   strNum.forEach((el) => {
-//     // s.includes(el) ? strElementes.push(s.indexOf(el)) : 0; 
-//     s.includes(el) ? strElementes.push(strNum.indexOf(el) + 1) : 0;
-//   });
-//   console.log(numElementes);
-//   console.log(strElementes);
-// }
-// solution("one4seveneight");
-
-
-// function solution(s) {
-//   const strNum = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
-//   const numElementes = s.split("").filter((el) => Number(el));
-//   const strElementes = [];
-//   const newArr = strNum.map((el) => s.indexOf(el));
- 
-//   let total = 0;
-//   newArr.forEach((el)=>{
-//     if(el !== -1){
-//       total++;
-//     }
-//   })
-
-//    //총 숫자의 개수
-//    numElementes.length + total
-// }
-// solution("one4seveneight");
-
 function solution(s) {
-  let answer = "";
-  const strNum = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
-  for(let el of s){
-    if(!isNaN(Number(el))) {
-      answer += el;
-    } else {
-      const strEle = strNum.find((el)=>s.includes(el))
-      answer += strEle[0];
-    }
-  }
+  const answer = s.replace(/one/gi,"1")
+  .replace(/two/gi,"2")
+  .replace(/three/gi,"3")
+  .replace(/four/gi,"4")
+  .replace(/five/gi,"5")
+  .replace(/six/gi,"6")
+  .replace(/seven/gi,"7")
+  .replace(/eight/gi,"8")
+  .replace(/nine/gi,"9")
+  .replace(/zero/gi,"0");
+  
+  return Number(answer);
 }
 solution("one4seveneight");
